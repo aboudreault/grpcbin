@@ -38,11 +38,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set up Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v3
         with:
           go-version: 1.14
       - name: Cache Go modules
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v3.0.1
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
@@ -78,7 +78,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v3
         with:
           go-version: ${{ matrix.golang }}
       - name: Run tests on Windows
@@ -97,10 +97,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v3
         with:
           go-version: ${{ matrix.golang }}
-      - uses: actions/cache@v2.1.7
+      - uses: actions/cache@v3.0.1
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ matrix.golang }}-${{ hashFiles('**/go.sum') }}
@@ -140,10 +140,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v3
         with:
           go-version: ${{ matrix.golang }}
-      - uses: actions/cache@v2.1.7
+      - uses: actions/cache@v3.0.1
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ matrix.golang }}-${{ hashFiles('**/go.sum') }}
